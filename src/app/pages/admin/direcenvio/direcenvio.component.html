@@ -1,0 +1,43 @@
+<app-headeradmin></app-headeradmin>
+<section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Direccion de Envio
+        </h2>
+      </div>
+      
+      <table class="table table-hover mt-">
+          <thead>
+              <tr>
+                  <td>Id Direccion</td> 
+                  <td>Nombre De Direccion</td>
+                  <td>Provincia</td>
+                  <td>Municipio</td>
+                  <td>DNI</td>
+                  <td>Nombre De Recogedor</td>
+                  <td>Telefono</td>
+              </tr>
+
+          </thead>
+          <tbody>
+            <tr *ngFor="let cuenta of listDire">
+                <td>{{ cuenta.id_DireccionEnvio }}</td>
+                <td>{{ cuenta.nombre_Direccion }}</td>
+                <td>{{ cuenta.provincia }}</td>
+                <td>{{ cuenta.municipal }}</td>
+                <td>{{ cuenta.dNI_Cliente_Rceiv }}</td>
+                <td>{{ cuenta.nombre_Cliente_Rec }}</td>
+                <td>{{ cuenta.telefono_Cliente }}</td>
+
+                
+               
+            </tr>
+          </tbody>
+          <tfoot>
+          </tfoot>
+      </table>
+    </div>
+    
+  </section>
+  <!-- end food section -->

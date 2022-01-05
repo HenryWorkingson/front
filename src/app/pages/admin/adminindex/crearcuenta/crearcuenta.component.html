@@ -1,0 +1,39 @@
+<app-headeradmin></app-headeradmin>
+
+<!-- book section -->
+<section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Crear Cuenta
+        </h2>
+      </div>
+      <div class="row ">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="" [formGroup]="agregarCuenta" (ngSubmit)="agregarCuen()">
+              <div>
+                <input formControlName="Nombre_Cuenta" type="text" class="form-control" id="Nombre_Cuenta" placeholder="Nombre" />
+              </div>
+              <div>
+                <input formControlName="Apellido_Cuenta" type="text" class="form-control" id="Apellido_Cuenta" placeholder="Apellido Cuenta" />
+              </div>
+              <div>
+                <input formControlName="Password_Cuenta" type="password" class="form-control" id="numeroPersonas" placeholder="Password Cuenta"/>
+              </div>
+              <div>
+                <input formControlName="Correo_Cuenta" type="email"  class="form-control" id="Correo_Cuenta" placeholder="Correo"/>
+              </div>
+              <div class="btn_box">
+                <button >
+                  Crear
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->

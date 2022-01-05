@@ -1,0 +1,11 @@
+<div class="login-page">
+    <div class="form">
+      <form class="login-form" [formGroup]="agregarLog" (ngSubmit)="logIN()">
+        <h1>LOGIN</h1>
+        <input type="text" placeholder="email" formControlName="Correo_Cuenta" id="Correo_Cuenta"/>
+        <input type="password" placeholder="password" formControlName="Password_Cuenta" id="Password_Cuenta"/>
+        <button  >login</button>
+        <p class="message"> Habla con el administrador para crear cuenta</p>
+      </form>
+    </div>
+  </div>

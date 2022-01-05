@@ -1,0 +1,42 @@
+<app-headeradmin></app-headeradmin>
+<section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Crear Platos
+        </h2>
+      </div>
+      <div class="row ">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="" [formGroup]="agregarPlato" (ngSubmit)="agregarP()">
+              <div>
+                <input formControlName="nombrePlato" type="text" class="form-control" id="nombrePlato" placeholder="Nombre de Plato" />
+              </div>
+              <div>
+                <input formControlName="descripcionPlato" type="text" class="form-control" id="descripcionPlato" placeholder="Descripcion de Plato" />
+              </div>
+              <div>
+                <input formControlName="precioBase" min="0" type="number" class="form-control" id="precioBase" placeholder="Precio"/>
+              </div>
+              <div>
+                <input formControlName="tipoPlato" type="text"  class="form-control" id="tipoPlato" placeholder="Tipo "/>
+              </div>
+              <div>
+                <input formControlName="imagePath" type="text"  class="form-control" id="imagePath" placeholder="Nombre de fichero de imagen.png "/>
+                <small>La ruta solo de la carpeta Angular /assets/images/nombre.img</small>
+              </div>
+
+              <div class="btn_box">
+                <button>
+                  Crear
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->

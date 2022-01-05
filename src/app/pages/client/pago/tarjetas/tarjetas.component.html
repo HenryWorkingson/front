@@ -1,0 +1,176 @@
+<body class="sub_page">
+
+    <div class="hero_area">
+      <div class="bg-box">
+        <img src="assets/images/hero-bg.jpg" alt="">
+      </div>
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Feane
+              </span>
+            </a>
+  
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  mx-auto ">
+                <li class="nav-item">
+                  <a routerLink="" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="menu" class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="about" class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="book" class="nav-link" href="book.html">Book Table</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <a routerLink="login" href="login.html" class="user_link">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+                <a routerLink="carro" href="carro.html" class="cart_link" >
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                     c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                     C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                     c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                     C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                     c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+                
+                <a routerLink="menu" href="menu.html" class="order_online">
+                  Order Online
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
+  
+    <!-- pago section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="" [formGroup]="agregarPedido" (ngSubmit)="generarPedido()">
+              <div class="heading_container">
+                <h2>
+                  Introducir Tarjeta
+                </h2>
+              </div>
+              <div>
+                <input formControlName="Numero_Tarjeta" type="text" class="form-control" id="Numero_Tarjeta" placeholder="Numero Tarjeta" />
+                <span class="text-danger" *ngIf="agregarPedido.get('Numero_Tarjeta')?.invalid && agregarPedido.get('Numero_Tarjeta')?.touched">
+                  El <strong>Numero Tarjeta</strong> es requerido 
+                </span>
+              </div>
+              <div>
+                <input formControlName="FechaCadu_Tarjeta" type="text" class="form-control" id="FechaCadu_Tarjeta" placeholder="Fecha de Caducidad" />
+                <span class="text-danger" *ngIf="agregarPedido.get('FechaCadu_Tarjeta')?.invalid && agregarPedido.get('FechaCadu_Tarjeta')?.touched">
+                  El <strong>Fecha de Caducidad </strong> es requerido
+                </span>
+              </div>
+              <div>
+                <input formControlName="Nom_Propietario" type="text" class="form-control" id="Nom_Propietario" placeholder="Nombre de Propietario"/>
+                <span class="text-danger" *ngIf="agregarPedido.get('Nom_Propietario')?.invalid && agregarPedido.get('Nom_Propietario')?.touched">
+                  La <strong>Nombre de Propietario</strong> es requerido
+                </span>
+              </div>
+              <div class="heading_container">
+                <h2>
+                  Introducir Direccion De Envio
+                </h2>
+              </div>
+              <div>
+                <input formControlName="Nombre_Direccion" type="text" class="form-control" id="Nombre_Direccion" placeholder="Nombre Direccion" />
+                <span class="text-danger" *ngIf="agregarPedido.get('Nombre_Direccion')?.invalid && agregarPedido.get('Nombre_Direccion')?.touched">
+                  La <strong>Direccion</strong> es requerido 
+                </span>
+              </div>
+              <div>
+                <input formControlName="Provincia" type="text" class="form-control" id="Provincia" placeholder="Provincia" />
+                <span class="text-danger" *ngIf="agregarPedido.get('Provincia')?.invalid && agregarPedido.get('Provincia')?.touched">
+                  La <strong>Provincia </strong> es requerido
+                </span>
+              </div>
+              <div>
+                <input formControlName="Municipal" type="text" class="form-control" id="Municipal" placeholder="Municipio"/>
+                <span class="text-danger" *ngIf="agregarPedido.get('Municipal')?.invalid && agregarPedido.get('Municipal')?.touched">
+                  El <strong>Municipio</strong> es requerido
+                </span>
+              </div>
+              <div>
+                <input formControlName="DNI_Cliente_Rceiv" type="text" class="form-control" id="DNI_Cliente_Rceiv" placeholder="DNI DE RECEPTOR"/>
+                <span class="text-danger" *ngIf="agregarPedido.get('DNI_Cliente_Rceiv')?.invalid && agregarPedido.get('DNI_Cliente_Rceiv')?.touched">
+                  El <strong>DNI DE RECEPTOR</strong> es requerido
+                </span>
+              </div>
+              <div>
+                <input formControlName="Nombre_Cliente_Rec" type="text" class="form-control" id="Nombre_Cliente_Rec" placeholder="NOMBRE DE RECPTOR"/>
+                <span class="text-danger" *ngIf="agregarPedido.get('Nombre_Cliente_Rec')?.invalid && agregarPedido.get('Nombre_Cliente_Rec')?.touched">
+                  El <strong>NOMBRE DE RECPTOR</strong> es requerido
+                </span>
+              </div>
+              <div>
+                <input formControlName="Telefono_Cliente" type="text" class="form-control" id="Telefono_Cliente" placeholder="Telefono"/>
+                <span class="text-danger" *ngIf="agregarPedido.get('Telefono_Cliente')?.invalid && agregarPedido.get('Telefono_Cliente')?.touched">
+                  El <strong>Telefono </strong> es requerido
+                </span>
+              </div>
+              <div class="heading_container">
+                <h2>
+                  Introducir Descripcion Pedido
+                </h2>
+              </div>
+              <div>
+                <input formControlName="Descripcion_Pedido" type="text" class="form-control" id="Descripcion_Pedido" placeholder="Descripcion Pedido"/>
+              </div>
+              <div class="btn_box" >
+                <button >
+                  Pagar
+                </button>
+              </div>
+            </form>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+ 
+  
+    <!-- footer section -->
+    <app-footer></app-footer>
+    <!-- footer section -->
+
+  
+  </body>

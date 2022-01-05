@@ -1,0 +1,44 @@
+<app-headeradmin></app-headeradmin>
+
+<section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Cuentas
+        </h2>
+      </div>
+      
+      <table class="table table-hover mt-">
+          <thead>
+              <tr>
+                  <td>Id Pedido</td> 
+                  <td>Id Direccion</td>
+                  <td>Id Tarjeta </td>
+                  <td>Descripcion</td>
+                  <td>Precio Total</td>
+              </tr>
+
+          </thead>
+          <tbody>
+            <tr *ngFor="let cuenta of listCuentas">
+                <td>{{ cuenta.id_Pedido }}</td>
+                <td>{{ cuenta.id_Direccion }}</td>
+                <td>{{ cuenta.tarjeta }}</td>
+                <td>{{ cuenta.descripcion_Pedido }}</td>
+                <td>{{ cuenta.precio_Total }}</td>
+
+                <td style="width: 10%">
+                  <button routerLink="{{cuenta.id_Pedido}}" class="btn btn-primary btn-sm float-end">info</button>
+                </td>
+                <td style="width: 10%">
+                    <button (click)="deletePedidos(cuenta.id_Pedido)" class="btn btn-danger btn-sm float-end">Eliminar</button>
+                </td>
+            </tr>
+          </tbody>
+          <tfoot>
+          </tfoot>
+      </table>
+    </div>
+    
+  </section>
+  <!-- end food section -->
