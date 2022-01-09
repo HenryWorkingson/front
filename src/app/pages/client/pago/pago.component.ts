@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import jsPDF from 'jspdf';
 import * as printJS from 'print-js'
 import { LineaPedido, InterfazComponent } from './interfaz/interfaz.component';
@@ -11,19 +11,23 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './pago.component.html',
   styleUrls: ['./pago.component.css','./style.css'],
 })
+@Injectable({
+  providedIn: 'root'
+})
 export class PagoComponent implements OnInit {
   total=0;  
   curDate=new Date();
-  constructor(private _pedido :TarjetasComponent,
-              private _pedidoServicio :InterfazComponent,
-              private _router: ActivatedRoute) { 
+  id:any;
+
+  constructor(private _pedidoServicio :InterfazComponent,
+              private _router: Router,
+              ) { 
     
   }
   listLPedido : LineaPedido[]=[];
 
   ngOnInit(): void {
     this.getLineaPedidoService();
-    
   }
 
 
@@ -44,8 +48,22 @@ export class PagoComponent implements OnInit {
     for(let carro of data){   
          this.total+= carro.precioTotal  
     }  
-  }  
-  
+  }
+  async getLineaPedService(id: number){
+    this.id=id; 
+    await this._pedidoServicio.getmoreInfo(id).subscribe(data => {
+      this.listLPedido = data;
+      console.log(data);
+      this.findsum(this.listLPedido);
+      console.log(this.total);
+      this._router.navigate(['pago']);
+    }, error => { console.log(error); });
+    console.log(this.total);
+  }
+     
+}
+export enum LineP{
+
 }
 
 

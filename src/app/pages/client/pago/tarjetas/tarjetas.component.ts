@@ -4,6 +4,7 @@ import { InterfazComponent, DTOTarjeta, DTOPedidos, Pedido, LineaPedido } from '
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { PagoComponent } from '../pago.component';
 
 @Component({
   selector: 'app-tarjetas',
@@ -23,7 +24,8 @@ export class TarjetasComponent implements OnInit {
   constructor(private fb: FormBuilder,
         private _TarService:InterfazComponent,
         private _router:Router,
-        private http:HttpClient) 
+        private http:HttpClient,
+        private pago:PagoComponent) 
     {
       this.agregarTarjeta=  this.fb.group({
         Numero_Tarjeta: ['',Validators.required],  
@@ -94,7 +96,8 @@ export class TarjetasComponent implements OnInit {
     
   }
   get(pedido: Pedido){
+    this._router.navigate(['pago']);
     console.log(pedido.id_Pedido);
-    this._router.navigate(['pago']);  
+    this.pago.getLineaPedService(pedido.id_Pedido);
   }
 }

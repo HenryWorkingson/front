@@ -17,6 +17,8 @@ export class InterfazComponent implements OnInit {
   private myApiDirUrl = 'Restaurante/CrearDirecciones/';
   private myApiPedUrl = 'Restaurante/CrearPedido/';
   private myApiLPUrl ='Restaurante/GetLineaPedido/';
+  private myApiLPAUrl ='Admin/LineaPed/';
+  
   constructor(private http:HttpClient){}
 
   ngOnInit(): void {
@@ -33,6 +35,10 @@ export class InterfazComponent implements OnInit {
   }
   getLnPedido():Observable<any>{
     return this.http.get(this.myAppUrl+this.myApiLPUrl);
+  }
+  getmoreInfo(id : any): Observable<any>{
+    console.log(this.myAppUrl+this.myApiLPUrl+id);
+    return this.http.get(this.myAppUrl+this.myApiLPAUrl+id);
   }
 
 }
