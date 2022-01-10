@@ -25,7 +25,7 @@ export class InterfComponent implements OnInit {
     return this.http.get(this.myAppUrl+this.myApiUrl);
   }
   deletePlato(id : number): Observable<any>{
-    console.log(id)
+    console.log(id);
     return this.http.delete(this.myAppUrl+this.myApiDelete+id);
   }
 
