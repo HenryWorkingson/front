@@ -36,6 +36,7 @@ import { MoreinfoComponent } from './pages/admin/pedido/moreinfo/moreinfo.compon
 import { TarjetaComponent } from './pages/admin/tarjeta/tarjeta.component';
 import { ReservaComponent } from './pages/admin/reserva/reserva.component';
 import { DirecenvioComponent } from './pages/admin/direcenvio/direcenvio.component';
+import { EnviadoComponent } from './pages/client/book/enviado/enviado.component';
 
 
 
@@ -72,6 +73,7 @@ import { DirecenvioComponent } from './pages/admin/direcenvio/direcenvio.compone
     TarjetaComponent,
     ReservaComponent,
     DirecenvioComponent,
+    EnviadoComponent,
   ],
   imports: [
     BrowserModule,

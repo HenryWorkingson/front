@@ -18,6 +18,7 @@ import { DirecenvioComponent } from './pages/admin/direcenvio/direcenvio.compone
 import { TarjetaComponent } from './pages/admin/tarjeta/tarjeta.component';
 import { ReservaComponent } from './pages/admin/reserva/reserva.component';
 import { MoreinfoComponent } from './pages/admin/pedido/moreinfo/moreinfo.component';
+import { EnviadoComponent } from './pages/client/book/enviado/enviado.component';
 
 var path='http://localhost:4200'
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path: 'admin/tarjeta', component:TarjetaComponent},
   {path: 'admin/reserva', component:ReservaComponent},
   {path: 'admin/pedidos/:parametro', component:MoreinfoComponent},
+  {path: 'enviado', component:EnviadoComponent},
 
   {path: 'admin/index/admin/crearcuenta',redirectTo:'admin/crearcuenta'},
   {path: 'about/about', redirectTo:'about'},

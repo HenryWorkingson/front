@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators,FormGroup ,ReactiveFormsModule } from '@angular/forms';
 import { InterfazComponent, DTOReserva } from './interfaz/interfaz.component';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -18,7 +19,8 @@ export class BookComponent implements OnInit {
   
   agregarBook: FormGroup;
   constructor(private fb: FormBuilder,
-        private _bookService:InterfazComponent) 
+        private _bookService:InterfazComponent,
+        private _router:Router) 
     {
       
       this.agregarBook=  this.fb.group({
@@ -45,7 +47,8 @@ export class BookComponent implements OnInit {
     }
     
     this._bookService.saveBook(book).subscribe(data => {
-      window.location.reload();
+      console.log(book);
+      this._router.navigate(['enviado']);
     },error=>{console.log(error)});
     
   }
