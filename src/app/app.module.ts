@@ -11,8 +11,6 @@ import { IndexComponent } from './pages/client/index/index.component';
 import { AboutComponent } from './pages/client/about/about.component';
 import { MenuComponent } from './pages/client/menu/menu.component';
 import { BookComponent } from './pages/client/book/book.component';
-import { PlatosComponent } from './pages/client/platos/platos.component';
-import { ComponentesPlatoComponent } from './pages/client/platos/componentes-plato/componentes-plato.component';
 import { LoginComponent } from './pages/client/login/login.component';
 import { CarroComponent } from './pages/client/carro/carro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,8 +21,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { TarjetasComponent } from './pages/client/pago/tarjetas/tarjetas.component';
 import { DireccionComponent } from './pages/client/pago/direccion/direccion.component';
 import { NgxPrintModule } from 'ngx-print';
-import { LogInComponent } from './pages/client/log-in/log-in.component';
-import { LogoutComponent } from './pages/auth/logout/logout.component';
 import { AdminindexComponent } from './pages/admin/adminindex/adminindex.component';
 import { HeaderadminComponent } from './pages/admin/headeradmin/headeradmin.component';
 import { InterfComponent } from './pages/admin/adminindex/interf/interf.component';
@@ -52,16 +48,12 @@ import { EnviadoComponent } from './pages/client/book/enviado/enviado.component'
     AboutComponent,
     MenuComponent,
     BookComponent,
-    PlatosComponent,
-    ComponentesPlatoComponent,
     LoginComponent,
     CarroComponent,
     InterfazComponent,
     PagoComponent,
     TarjetasComponent,
     DireccionComponent,
-    LogInComponent,
-    LogoutComponent,
     AdminindexComponent,
     HeaderadminComponent,
     InterfComponent,

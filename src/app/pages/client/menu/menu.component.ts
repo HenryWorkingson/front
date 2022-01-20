@@ -23,17 +23,11 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.getListPlatos();
   }
-
-
-
   getListPlatos(){
     return this._platosService.getListPlatos().subscribe(data => {
       this.listPlatos=data;
     },error=>{console.log(error)});
-
-     
   }
-  
   addCarro(idProducto: any ){
     this._platosService.addCarro(idProducto).subscribe(data =>{
     });
